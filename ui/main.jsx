@@ -1,9 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
 
 async function main() {
-  const filmsResponse = await fetch("/api/v1/films");
+  const filmId = window.location.pathname.split('/').pop();
+  const filmsResponse = await fetch("/api/v1/${filmId}");
   const films = await filmsResponse.json();
 
   const rootElt = document.getElementById("app");
