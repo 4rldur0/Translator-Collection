@@ -8,4 +8,5 @@ app = FastAPI()
 def root():
     return {"message": "Hello World"}
 
+
 app.mount("/", StaticFiles(directory="ui/dist", html=True), name="ui")
